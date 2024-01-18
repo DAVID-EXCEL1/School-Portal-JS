@@ -1,43 +1,44 @@
-// var food = {
-//     foodName: 'Pounded yam', 
-//     ancestor: 'yam',
-//     color: 'white',
-//     isSweet: true,
-//     isExpensive: true,
-//     price: 1000,
-//     eat() {
-//         console.log('I am now eating');
-//     },
-//     notEat() {
-//         console.log("I am not eating");
-//     },
-//     buy(){
-//         console.log('Bring it');
-//     },
-//     doNotBuy(){
-//         console.log("I'm not Buying It's expensive");
-//     }
-// }
+allStudents = [];
+
+//----------------------------------- SCHOOL PORTAL-----------------------------------------//
 
 
-// console.log(food.price);   // Dot Notation
-// console.log(food['isExpensive']); // Bracket Notation
-// if (food.foodName == 'Pounded yam') {
-//     food.eat();
-// }else{
-//     food.notEat();
-// }
+//-----------------Display-Students Function--------------------//
 
-// if (food.price == 1000) {
-//     food.buy()
-// }else {
-//     food.doNotBuy();
-// }
+function displayStudents() {
+    show.innerHTML = "";
+    show.innerHTML += `
+        <tr>
+            <th class="">S/N</th>
+            <th class="">First Name</th>
+            <th class="">Last Name</th>
+            <th class="">Address</th>
+            <th class="">Email / Phone No.</th>
+            <th class="">Make Changes</th>
+        </tr>
+    `
+    if (allStudents.length > 0) {
+        for (i = 0; i < allStudents.length; i++) {
+            show.innerHTML += `
+        <tr>
+            <td>${i + 1}.</td>
+            <td>${allStudents[i].firstName}</td>
+            <td>${allStudents[i].lastName}</td>
+            <td>${allStudents[i].address}</td>
+            <td>${allStudents[i].mailPhone}</td>
+            <td>
+                <button class="btn btn-danger mt-1 btn-sm" onclick="del(${i})">Delete</button>
+                <button class="btn btn-warning btn-sm mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></td>
+            </td>
+        </tr>
+        `
+        }
+    }
+}
 
+//-----------------Submit Function--------------------//
 
-// SCHOOL PORTAL
 function submit() {
-    allStudents = [];
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var address = document.getElementById("address").value;
@@ -63,7 +64,6 @@ function submit() {
                 successMessage.style.display = "none"
             }, 3000)
         } else {
-
             alert("Failed to submit");
         }
     }
@@ -75,38 +75,9 @@ function submit() {
     document.getElementById("password").value = "";
 }
 
-function displayStudents() {
-    show.innerHTML = "";
-    show.innerHTML += `
-        <tr>
-        <th class="">S/N</th>
-        <th class="">First Name</th>
-        <th class="">Last Name</th>
-        <th class="">Address</th>
-        <th class="">Email / Phone No.</th>
-        <th class="">Make Changes</th>
-        </tr>
-    `
-    if (allStudents.length > 0) {
-        for (i = 0; i < allStudents.length; i++){
-            console.log(allStudents[i].firstName);
-            console.log(allStudents[i].lastName);
-            console.log(allStudents[i].address);
-            console.log(allStudents[i].mailPhone);
-        }
-        // .map
-        // allStudents.map((student, index) => {
-        //     console.log(student.firstName);
-        // })
-        show.innerHTML += `
-        <tr>
-        <td>${i}.</td>
-        <td>${allStudents[i].firstName}</td>
-        <td>${allStudents[i].lastName}</td>
-        <td>${allStudents[i].address}</td>
-        <td>${allStudents[i].mailPhone}</td>
-        <td><button class="btn btn-danger mt-1 btn-sm" onclick="del(${i})">Delete</button></td>
-        </tr>
-        `
-    }
+//-----------------Delete Function--------------------//
+
+function del(del) {
+    allStudents.splice(del, 1);
+    displayStudents()
 }

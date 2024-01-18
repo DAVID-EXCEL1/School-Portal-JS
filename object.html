@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        var food = {
+                foodName: 'Pounded yam', 
+                ancestor: 'yam',
+                color: 'white',
+                isSweet: true,
+                isExpensive: true,
+                price: 1000,
+                eat() {
+                    console.log('I am now eating');
+                },
+                notEat() {
+                    console.log("I am not eating");
+                },
+                buy(){
+                    console.log('Bring it');
+                },
+                doNotBuy(){
+                    console.log("I'm not Buying It's expensive");
+                }
+            }
+            
+            
+            console.log(food.price);   // Dot Notation
+            console.log(food['isExpensive']); // Bracket Notation
+            if (food.foodName == 'Pounded yam') {
+                food.eat();
+            }else{
+                food.notEat();
+            }
+            
+            if (food.price == 1000) {
+                food.buy()
+            }else {
+                food.doNotBuy();
+            }
+            
+    </script>
+</body>
+</html>
