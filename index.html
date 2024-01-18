@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-School Portal</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.js">
+
+</head>
+
+<body class="bg-dark text-info">
+    <div class="container mt-lg-5 mt-3 shadow-lg col-lg-7 col-10">
+        <h3 class="text-center text-decoration-underline">SCHOOL PORTAL</h3>
+        <div class="alert alert-danger p-2 text-center bg-danger text-warning border-0 w-50 mx-auto my-3 
+        animate__animated animate__flash animate__infinite animate__slow 2s" style="display: none;" id="emptyError">
+        All spaces must be filled
+    </div>
+    <div class="alert alert-success p-2 text-center bg-success text-light border-0 w-50 mx-auto my-3 
+    animate__animated animate__heartBeat animate__infinite animate__slow 2s" style="display: none;" id="successMessage">
+    Submitted Successfully
+</div>
+        <div class="my-2">
+            <label for="" class="form-label">First Name</label>
+            <input type="text" name="" id="firstName" class="form-control form-control-sm shadow-none">
+        </div>
+        <div class="my-2">
+            <label for="" class="form-label">Last Name</label>
+            <input type="text" name="" id="lastName" class="form-control form-control-sm shadow-none">
+        </div>
+        <div class="my-2">
+            <label for="" class="form-label">Address</label>
+            <input type="text" name="" id="address" class="form-control form-control-sm shadow-none">
+        </div>
+        <div class="my-2">
+            <label for="" class="form-label">Email/PhoneNumber</label>
+            <input type="text" name="" id="mailPhone" class="form-control form-control-sm shadow-none">
+        </div>
+        <div class="my-2">
+            <label for="" class="form-label">Password</label>
+            <input type="password" name="" id="password" class="form-control form-control-sm shadow-none">
+        </div>
+        <button class="btn btn-info w-100 my-3 btn-sm" onclick="submit()">Submit</button>
+    </div>
+
+    <div class="container shadow-lg col-lg-7 mt-3 mt-lg-5 col-10">
+        <table class="table table-ordered" id="show"></table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
